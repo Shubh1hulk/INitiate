@@ -23,6 +23,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/user', require('./routes/user'));
 app.use('/api/twin', require('./routes/twin'));
 app.use('/api/simulator', require('./routes/simulator'));
+app.use('/api/ml', require('./routes/ml'));
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -47,4 +48,9 @@ app.listen(PORT, () => {
   console.log('POST /api/twin/chat - Create new chat');
   console.log('POST /api/twin/chat/:chatId/message - Send message');
   console.log('POST /api/simulator/simulate - Generate simulation');
+  console.log('POST /api/ml/sentiment - Analyze sentiment (Python DL)');
+  console.log('POST /api/ml/embedding - Generate embedding (SentenceTransformer)');
+  console.log('POST /api/ml/semantic-search - Semantic retrieval (Python DL)');
+  console.log('POST /api/ml/classifier/train - Train text classifier (scikit-learn)');
+  console.log('POST /api/ml/classifier/predict - Predict text class (scikit-learn)');
 });
